@@ -6,31 +6,43 @@
     <title >Currency Rates</title>
 </head>
 <body>
-    <h1 style="text-align:center;">Currency Rates</h1>
+  <table>
+    <tr>
+      <th>
+        Prime 2
+      </th>
+
+    </tr>
+
+
+  </table>
+  <div align="left">
+    <h1 style="text-align:left;">Currency Rates</h1>
     
-      <h3 id = "base" style="text-align:center;"> </h3>
-      <h3 id="ratetoday" style="text-align:center;"></h3>
-      <h4 id="inr" style="text-align:center;"></h4>
-      <h4 id="gbp" style="text-align:center;"></h4>
-      <h4 id="eur" style="text-align:center;"></h4>
-      <h4 id="jpy" style="text-align:center;"></h4>
-      <h4 id="cny" style="text-align:center;"></h4>
-      <h4 id="aud" style="text-align:center;"></h4>
-      <h4 id="cad" style="text-align:center;"></h4>
+      <h3 id = "base" style="text-align:left;"> </h3>
+      <h3 id="ratetoday" style="text-align:left;"></h3>
+      <h4 id="inr" style="text-align:left;"></h4>
+      <h4 id="gbp" style="text-align:left;"></h4>
+      <h4 id="eur" style="text-align:left;"></h4>
+      <h4 id="jpy" style="text-align:left;"></h4>
+      <h4 id="cny" style="text-align:left;"></h4>
+      <h4 id="aud" style="text-align:left;"></h4>
+      <h4 id="cad" style="text-align:left;"></h4>
+    </div>
     <script>
         var currency = JSON.parse('{{ currency | tojson | safe}}');
         function setElements() {
           var base = document.getElementById('base');
-          base.innerHTML = "US Dollar to Indian Rupee, British Pound, European Euro, Japanese Yen, Chinese Yuan, Austrailian Dollar, and Candian Dollar"
+          base.innerHTML = "Current Exchange Rates"
           ratetoday.innerHTML = "Today's Date: "+currency.date
 
-          inr.innerHTML = "1 USD to INR: " + currency.rates.INR
-          gbp.innerHTML = "1 USD to GBP: " + currency.rates.GBP
-          eur.innerHTML = "1 USD to EUR: " + currency.rates.EUR
-          jpy.innerHTML = "1 USD to JPY: " + currency.rates.JPY
-          cny.innerHTML = "1 USD to CNY: " + currency.rates.CNY
-          aud.innerHTML = "1 USD to AUD: " + currency.rates.AUD
-          cad.innerHTML = "1 USD to CAD: " + currency.rates.CAD
+          inr.innerHTML = "1 USD to Indian Rupee: " + currency.rates.INR
+          gbp.innerHTML = "1 USD to British Pound: " + currency.rates.GBP
+          eur.innerHTML = "1 USD to Euro: " + currency.rates.EUR
+          jpy.innerHTML = "1 USD to Japanese Yen: " + currency.rates.JPY
+          cny.innerHTML = "1 USD to Chinese Yuan: " + currency.rates.CNY
+          aud.innerHTML = "1 USD to Australian Dollar: " + currency.rates.AUD
+          cad.innerHTML = "1 USD to Candian Dollar: " + currency.rates.CAD
         }  
     
         

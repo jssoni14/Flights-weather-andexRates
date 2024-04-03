@@ -1,0 +1,11 @@
+version: '3'
+services:
+  app:
+    image: python:3.8-slim-buster
+    container_name: app_main
+    ports:
+      - '5000:5000'
+    working_dir: /Flights-weather-andexRates
+    volumes:
+      - ./:/Flights-weather-andexRates
+    tty: true
